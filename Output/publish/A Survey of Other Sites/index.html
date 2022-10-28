@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en"><head><title>Mozahler - Getting It to the Next Level</title><meta name="twitter:title" content="Mozahler - Getting It to the Next Level"/><meta name="og:title" content="Mozahler - Getting It to the Next Level"/><meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous"/><link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css"/><link rel="stylesheet" href="/styles.css"/></head><body><div id="layout" class="pure-g"><div><div class="pure-menu pure-menu-horizontal pure-u-1-1 top-header"><a class="pure-menu-heading" href="/">Mozahler</a><ul class="pure-menu-list"><li class="pure-menu-item"><a class="pure-menu-link" href="/posts">Posts</a></li><li class="pure-menu-item"><a class="pure-menu-link" href="/publish">Publish</a></li><li class="pure-menu-item"><a class="pure-menu-link" href="/swiftui">SwiftUI</a></li><li class="pure-menu-item"><a class="pure-menu-link" href="/about">About This Site</a></li></ul></div></div><div class="sidebar pure-u-1 pure-u-md-1-4"><div class="header"><div id="layout" class="pure-g"><div class="author__avatar"><img src="../../Images/Mozahler.jpg"/></div><div class="pure-u-md-1-1 pure-u-3-4"><h1 class="brand-title">Mozahler</h1><h3 class="brand-tagline">Getting It to the Next Level</h3></div></div><div id="layout" class="pure-g"><div class="pure-u-md-1-1"><a href="https://en.wikipedia.org/wiki/Boston"><i class="fas fa-map-marker-alt l-box social-icon"></i><a class="social-media" href="https://en.wikipedia.org/wiki/Boston">Boston, Massachusetts, USA</a></a></div><div class="pure-u-md-1-1"><a href="mailto:mozahleri@gmail.com"><i class="fas fa-envelope-open-text l-box social-icon"></i><a class="social-media" href="mailto:mozahleri@gmail.com">Email</a></a></div><div class="pure-u-md-1-1"><a href="https://www.linkedin.com/in/thomas-ingemanson-8900a31b0"><i class="fab fa-linkedin l-box social-icon"></i><a class="social-media" href="https://www.linkedin.com/in/thomas-ingemanson-8900a31b0">LinkedIn</a></a></div><div class="pure-u-md-1-1"><a href="https://github.com/mozahler"><i class="fab fa-github-square l-box social-icon"></i><a class="social-media" href="https://github.com/mozahler">GitHub</a></a></div><div class="pure-u-md-1-1"><a href="https://stackoverflow.com/users/5156054/mozahler"><i class="fab fa-stack-overflow l-box social-icon"></i><a class="social-media" href="https://stackoverflow.com/users/5156054/mozahler">StackOverflow</a></a></div><div class="pure-u-md-1-1"><a href="https://twitter.com/Mozahler"><i class="fab fa-twitter-square l-box social-icon"></i><a class="social-media" href="https://twitter.com/Mozahler">Twitter</a></a></div></div></div></div><div class="content pure-u-1 pure-u-md-3-5 pure-u-xl-6-10"><h2 class="post-title"><a href="/publish/A Survey of Other Sites">A Survey of Other Sites</a></h2><p class="post-meta">10.13.2022</p><div class="post-tags"><a class="post-category post-category-site" href="/tags/site">site</a></div><div class="post-description"><div><h1>A Survey of Other Sites</h1><h4>How do I set up my own web site when I don't what my options are?</h4><p>By following the install instructions on the <code>Publish</code> website, or any of the many introductory pieces available online, I can set up a basic web site in minutes. That's pretty incredible and a testament to John Sundell's hard work at piecing together the infrastructure needed to transform a bunch of markdown and image files into a website.</p><p>The default setup is a good place to start, but you will want to display your information your way. In my opinion, a good early step is to learn what others have done to customize their own sites. The list of sites that have shared their implementation is probably larger than you'd think. One of the many sites I visited had a page dedicated to exploring some of these sites. It's called <code>Wrestling With Publish</code>, and there's a link at the bottom of the page. I recommend you visit the sites yourself and see how they work.</p><h2>Some Published Sites (and a theme or two)</h2><p>I downloaded quite a few of these projects and visited each site built by the projects (where available). As I navigated through each site, I tried to identify for myself what was different in each, as well as what they had in common. Doing this I was able to pick out new details I had missed when just casually glancing at other sites.</p><h3>How Do They Differ From Each Other?</h3><p>You'd be surprised at how much customization some people have put into their website. Sometimes it was the way the information was being presented, but at others it was more about how things were organized - how everything fit together. And of course color choices can make a site stand out, as well as images (gifs, jpgs, pngs are all easily integrated into the site).</p><p>When I found a feature that seemed new or useful, I made a note of it so I could return later and match the site with the source code published on GitHub. This helped me come up with a short list of features that I wanted to add to my own site.</p><h2>Weissazool - A Blog With Images</h2><p><a href="https://weissazool.github.io/blog/2020-07-23-sotd/">Itabashi Tenso Shrine</a></p><p>Nice example of image and post together and how to do that. Each SOTD (Shrine of the Day) entry is the equivalent of a cell in a tableview complete with an image and link to a full page entry.</p><p>Use the cell design code as a starting point.</p><h3>Content</h3><p>where Content has two folders at its top level</p><h4>Blog</h4><p>A long list of filenames with embedded dates in YYYY-MM-DD format.</p><p>There is an <code>index.md</code> file, but it is completely empty.</p><p>The yaml tags at the top of the file include a line like this:</p><pre><code>image: ./../../sotd/tofukuji.<span class="property">jpeg</span>
+</code></pre><p>the first dot is the current folder the first set of double dots is the <code>blog</code> folder the next set of double dots are the <code>Content</code> folder. Notice that <code>Output</code> is implicit as you move back down the file hierarchy, as <code>sotd</code> is the name of a folder directly at the root. Finally you have the filename of the image.</p><h3>Resources</h3><h3>The <code>sotd</code> Folder under Resources</h3><p>This folder's contents are all <code>.jpeg</code> files.</p><p>The SectionID enum has two cases: <code>blog</code> and <code>projects</code></p><p>In main.swift you have just this publishing step:</p><pre><code><span class="keyword">try</span> <span class="type">Weissazool</span>().<span class="call">publish</span>(
+  withTheme: .<span class="dotAccess">weissazool</span>,
+  deployedUsing: .<span class="call">gitHub</span>(<span class="string">"weissazool/weissazool.github.io"</span>, useSSH: <span class="keyword">false</span>)
+)
+</code></pre><p>imagePath is left nil</p><p>the <code>ItemMetadata</code> is left blank</p><p>there is a template file which reflects the structure of the individual blog entries: the yaml at the top</p><h5>An Actual Entry</h5><pre><code>[&lt;figure&gt;
+  &lt;img src=<span class="string">"./../../sotd/kinoene.jpeg"</span>
+  alt=<span class="string">"A lamp post advertising Kinoene soy sauce."</span>/&gt;
+  &lt;figcaption&gt;<span class="type">Caption</span>&lt;/figcaption&gt;
+&lt;/figure&gt;](./../../sotd/kinoene.<span class="property">jpeg</span>)
+</code></pre><h5>The Template</h5><pre><code>[&lt;figure&gt;
+  &lt;img src=<span class="string">"./../../sotd/shrine-image.jpeg"</span>
+  alt=<span class="string">"alt text"</span>/&gt;
+  &lt;figcaption&gt;<span class="type">Caption</span>&lt;/figcaption&gt;
+&lt;/figure&gt;](./../../sotd/shrine-image.<span class="property">jpeg</span>)
+</code></pre><h3>Sources</h3><p>Surprisingly, this isn't just <code>.swift</code> files. but a mix of <code>.swift</code>, <code>.scss</code>, and <code>.png</code> files - as well as the template <code>.md</code> file already mentioned. There is only one other <code>.swift</code> file besides <code>main</code>, and that file extends <code>Theme</code> to include a variable which returns the custom theme for the site</p><pre><code><span class="keyword">extension</span> <span class="type">Theme</span> <span class="keyword">where</span> <span class="type">Site</span> == <span class="type">Weissazool</span> {
+  <span class="comment">/// Modified from the default "Foundation" theme that Publish ships with, a very
+  /// basic theme mostly implemented for demonstration purposes.</span>
+  <span class="keyword">static var</span> weissazool: <span class="type">Self</span> {
+    <span class="type">Theme</span>(
+      htmlFactory: <span class="type">WeissazoolHTMLFactory</span>(),
+      resourcePaths: [<span class="string">"Resources/theme/styles.css"</span>]
+    )
+  }
+}
+</code></pre><p>In this file you'll also find his definition of an <code>HTMLFactory</code>. He implements the required methods, plus a couple of others.</p><pre><code>   <span class="keyword">func</span> head(for location: <span class="type">Location</span>, on site: <span class="type">Site</span>) -&gt; <span class="type">Node</span>&lt;<span class="type">HTML</span>.<span class="type">DocumentContext</span>&gt; {]
+  
+  <span class="keyword">func</span> makeIndexHTML(for index: <span class="type">Index</span>,
+                     context: <span class="type">PublishingContext</span>&lt;<span class="type">Site</span>&gt;) <span class="keyword">throws</span> -&gt; <span class="type">HTML</span> {}
+
+  <span class="keyword">func</span> makeSectionHTML(for section: <span class="type">Section</span>&lt;<span class="type">Site</span>&gt;,
+                       context: <span class="type">PublishingContext</span>&lt;<span class="type">Site</span>&gt;) <span class="keyword">throws</span> -&gt; <span class="type">HTML</span> {
+
+
+  <span class="keyword">func</span> makeItemHTML(for item: <span class="type">Item</span>&lt;<span class="type">Site</span>&gt;,
+                    context: <span class="type">PublishingContext</span>&lt;<span class="type">Site</span>&gt;) <span class="keyword">throws</span> -&gt; <span class="type">HTML</span> {}
+
+  <span class="keyword">func</span> makePageHTML(for page: <span class="type">Page</span>,
+                    context: <span class="type">PublishingContext</span>&lt;<span class="type">Site</span>&gt;) <span class="keyword">throws</span> -&gt; <span class="type">HTML</span> {}
+
+  <span class="keyword">func</span> makeTagListHTML(for page: <span class="type">TagListPage</span>,
+                       context: <span class="type">PublishingContext</span>&lt;<span class="type">Site</span>&gt;) <span class="keyword">throws</span> -&gt; <span class="type">HTML</span>? {}
+
+  <span class="keyword">func</span> makeTagDetailsHTML(for page: <span class="type">TagDetailsPage</span>,
+                          context: <span class="type">PublishingContext</span>&lt;<span class="type">Site</span>&gt;) <span class="keyword">throws</span> -&gt; <span class="type">HTML</span>? {}
+</code></pre><p>Finally, he extends Plot.Node</p><p>Plot (also written by John) is a <a href="https://en.wikipedia.org/wiki/Domain-specific_language">DSL</a> which enables you to write swift code that can be automatically translated into HTML in a more type-safe way.</p><p>&gt;Plot treats all elements and attributes that a document contains as nodes. When using the Plot DSL, each time you create a new element, or add an attribute to an existing one, you are creating a node. Nodes can also contain just text, which can either be escaped or treated as raw, pre-processed text. Groups can also be created to form components.</p><pre><code>   <span class="keyword">static func</span> wrapper(<span class="keyword">_</span> nodes: <span class="type">Node</span>...) -&gt; <span class="type">Node</span> {}
+
+  <span class="keyword">static func</span> header&lt;T: <span class="type">Website</span>&gt;(
+    for context: <span class="type">PublishingContext</span>&lt;<span class="type">T</span>&gt;,
+    selectedSection: <span class="type">T</span>.<span class="type">SectionID</span>?
+  ) -&gt; <span class="type">Node</span> {}
+  
+  <span class="keyword">static func</span> itemList&lt;T: <span class="type">Website</span>&gt;(for items: [<span class="type">Item</span>&lt;<span class="type">T</span>&gt;], on site: <span class="type">T</span>) -&gt; <span class="type">Node</span> {}
+    
+  <span class="keyword">static func</span> tagList&lt;T: <span class="type">Website</span>&gt;(for item: <span class="type">Item</span>&lt;<span class="type">T</span>&gt;, on site: <span class="type">T</span>) -&gt; <span class="type">Node</span> {}
+
+  <span class="keyword">static func</span> footer&lt;T: <span class="type">Website</span>&gt;(for site: <span class="type">T</span>) -&gt; <span class="type">Node</span> {}
+</code></pre><h2>Joe Blau</h2><p><a href="https://joeblau.com/">Joe Blau</a></p><p>I love this site. He calls himself a <code>Design Engineer</code>, and it is clear that this is his thing.</p><h3>Very Individualistic</h3><p>The landing page has an old school look. It looks like you are viewing the console of a terminal, and he is issuing the <code>blau</code> command with different parameters - each set of output corresponds to category of a classic resume. The unix-like output is similar to a man page and provides a maximum amount of information while taking up very little space. There are no links in this top portion of the page - they are all relegated to the bottom of the page in two sections providing information on how to contact him. One section provides his email and phone number, the other is a list of his socials.</p><p>To complete the illusion, the final line displays a blinking cursor on a blank command line.</p><p>Take a look at one of links: <a href="https://conquer.earth/joeblau">Conquer Earth</a></p><p>The last time I looked, he had visited <strong>276</strong> places around the world.</p><p>He has broken out his Plot.Node extensions into multiple files</p><p>CallToAction<br>Features<br>Footer<br>Header<br>Hero<br><br>Just take a look at his "read me first" page. His picture at the top, next a row of "buttons" that highlight as you scroll over them. One each for twitter, insta, GitHub and his home site.</p><p>What follows mirrors the struct of the <code>blog</code> folder described under <code>Weissazool</code>s <code>Content</code> folder. What's interesting here is that you don't see the entire article. At an appropriate breakpoint in the content there is a <code>Continue Reading</code> button. [will need to see how that is done]</p><p>The <code>Next</code> button on the bottom of the page has the same appearance (including highlighting as you scroll over them) as the buttons at the top of the page. Tap on the button and you'll see that the subsequent pages display the page number at the top above a divider/separator/line.</p><p>Joe has given a lot of though as to how to organize his data, and here are just two of the protocols he's defined for himself:</p><pre><code><span class="keyword">public protocol</span> BulletPointable {
+    <span class="keyword">var</span> symbol: <span class="type">String</span>? { <span class="keyword">get set</span> }
+    <span class="keyword">var</span> tags: [<span class="type">String</span>]? { <span class="keyword">get set</span> }
+    <span class="keyword">var</span> images: [<span class="type">String</span>]? { <span class="keyword">get set</span> }
+    <span class="keyword">var</span> title: <span class="type">String</span>? { <span class="keyword">get set</span> }
+    <span class="keyword">var</span> description: <span class="type">String</span>? { <span class="keyword">get set</span> }
+    <span class="keyword">var</span> url: <span class="type">URL</span>? { <span class="keyword">get set</span> }
+}
+
+<span class="keyword">public protocol</span> BlauThemable: <span class="type">Website</span> {
+    <span class="keyword">var</span> hero: <span class="type">HeroSectionable</span>? { <span class="keyword">get set</span> }
+    <span class="keyword">var</span> header: <span class="type">HeaderSectionable</span>? { <span class="keyword">get set</span> }
+    <span class="keyword">var</span> features: <span class="type">FeatureSectionable</span>? { <span class="keyword">get set</span> }
+    <span class="keyword">var</span> callToAction: <span class="type">CallToActionSectionable</span>? { <span class="keyword">get set</span> }
+    <span class="keyword">var</span> footer: <span class="type">FooterSectionable</span>? { <span class="keyword">get set</span> }
+}
+</code></pre><p>I want to point out two of the factory methods he's implemented.</p><pre><code>        <span class="keyword">func</span> makeIndexHTML(for index: <span class="type">Index</span>,
+                           context: <span class="type">PublishingContext</span>&lt;<span class="type">Site</span>&gt;) <span class="keyword">throws</span> -&gt; <span class="type">HTML</span> {
+            <span class="type">HTML</span>(
+                .<span class="call">lang</span>(context.<span class="property">site</span>.<span class="property">language</span>),
+                .<span class="call">head</span>(for: index,
+                      on: context.<span class="property">site</span>,
+                      titleSeparator: <span class="string">" | "</span>,
+                      stylesheetPaths: <span class="call">buildStyleSheettPaths</span>(for: context.<span class="property">site</span>),
+                      rssFeedPath: .<span class="dotAccess">defaultForRSSFeed</span>,
+                      rssFeedTitle: <span class="keyword">nil</span>),
+                .<span class="call">body</span>(
+                    .<span class="call">header</span>(for: context.<span class="property">site</span>),
+                    .<span class="call">main</span>(
+                        .<span class="call">features</span>(for: context.<span class="property">site</span>),
+                        .<span class="call">callToAction</span>(for: context.<span class="property">site</span>)
+                    ),
+                    .<span class="call">footer</span>(for: context.<span class="property">site</span>)
+                )
+            )
+        }
+</code></pre><pre><code>       <span class="keyword">func</span> makePageHTML(for page: <span class="type">Page</span>,
+                          context: <span class="type">PublishingContext</span>&lt;<span class="type">Site</span>&gt;) <span class="keyword">throws</span> -&gt; <span class="type">HTML</span> {
+            <span class="type">HTML</span>(
+                .<span class="call">lang</span>(context.<span class="property">site</span>.<span class="property">language</span>),
+                .<span class="call">head</span>(for: page,
+                      on: context.<span class="property">site</span>,
+                      titleSeparator: <span class="string">" | "</span>,
+                      stylesheetPaths: <span class="call">buildStyleSheettPaths</span>(for: context.<span class="property">site</span>),
+                      rssFeedPath: .<span class="dotAccess">defaultForRSSFeed</span>,
+                      rssFeedTitle: <span class="keyword">nil</span>),
+                .<span class="call">body</span>(
+                    .<span class="call">header</span>(
+                        .<span class="call">h1</span>(.<span class="call">text</span>(page.<span class="property">title</span>)),
+                        .<span class="call">h3</span>(.<span class="call">text</span>(page.<span class="property">description</span>))
+                    ),
+                    .<span class="call">main</span>(
+                        .<span class="call">section</span>(
+                            .<span class="call">class</span>(<span class="string">"max-section"</span>),
+                            page.<span class="property">body</span>.<span class="property">node</span>
+                        )
+                    ),
+                    .<span class="call">footer</span>(for: context.<span class="property">site</span>)
+                )
+            )
+        }
+</code></pre><p>So much power in so few lines.</p><p>Extra features: beautiful capsule buttons, excerpted articles with buttons to view the entire entry.</p><p>Because the source code for the actual site isn't posted on GitHub (only the theme is published) I will have to come back to this after I've explored some of the other sites. Obviously, this is my favorite so far.</p><h2>Povilas Staškus</h2><p><a href="https://www.staskus.io/">Povilas Staškus - iOS Developer</a></p><p>Besides <code>Publish</code> he uses the <code>Splash</code> plugin (<code>SplashPublishPlugin</code>). Don't assume that means there are no bells or whistles here. His blog pages are exceptionally well thought-out and present well.</p><p>The page layout consists of a row at the top (the four .md files at the base of the <code>Content</code> folder), followed by a two column layout. On the left is an avatar and social links, on the right is the scrolling list of blog entries found in his <code>posts</code> folder (directly under <code>Content</code>) with a <code>RECENT POSTS</code> header.</p><p>His buttons are colorized and rather than changing their background color when hovered over, an underline appears underneath the button label's text</p><p>Each row or cell has similar yaml, which provides most of the formatting applied.</p><pre><code>---
+title: <span class="type">Building</span> a real-world iOS app (<span class="type">Part</span> <span class="number">1</span>): <span class="type">Introduction</span>
+date: <span class="number">2019</span>-<span class="number">03</span>-<span class="number">11 12</span>:<span class="number">00</span>
+tags: <span class="type">Tutorial</span>, iOS, <span class="type">Swift</span>
+excerpt: <span class="type">We</span>'ll be creating and releasing an iOS application by showing a real thinking process, going through essential steps and providing the motivation behind them.
+---
+</code></pre><p>The title also functions as a link - scrolling over it displays an underline, tapping on it brings up the full entry on its own page.</p><p>Beside a folder full of extensions to Plot.Node (I'm detecting a pattern here), there are 3 additional files for a date formatter, html factory and a Theme identifier.</p><pre><code><span class="keyword">extension</span> <span class="type">DateFormatter</span> {
+    <span class="keyword">static var</span> blog: <span class="type">DateFormatter</span> = {
+        <span class="keyword">let</span> formatter = <span class="type">DateFormatter</span>()
+        formatter.<span class="property">dateStyle</span> = .<span class="dotAccess">long</span>
+        <span class="keyword">return</span> formatter
+    }()
+}
+</code></pre><p>Nothing fancy, the standard <code>.long</code> date style. It does a nice job of keeping the interface clean.</p><p>Other notes:</p><p>&gt;Fairly comprehensive, includes avatar links to socials. Professional in appearance.<br><a href="https://yusufozgul.com/">index | Yusuf Özgül | Blog | Resume | Portfolio</a></p><p>The top of the page has his name followed by the major components of the site (buttons that highlight as they are scrolled over) all over a dark background (foreground/text is white, background is black, highlighted background on the buttons is blue)</p><p>The blog list shows the most recent posts, a button at the bottom displays all posts (sorted by date descending)</p><p>He has a <code>Contact</code> page that uses <code>Typeform</code></p><p>His <code>Projects</code> page lists his open source work on GitHub, and apps in the AppStore</p><p>Despite the relatively simple theme, he’s got a fairly intricate set of conditionals, which may help you sort out how to write your own theme. Also interesting is a loader class that creates the static pages of the site. Uses <code>SplashPublishPlugin</code> and many others. In fact, he has the most plugins of any of the projects I've discussed:</p><pre><code>     targets: [
+        .<span class="call">executableTarget</span>(name: <span class="string">"YusufozgulCom"</span>,
+        dependencies: [
+                            <span class="string">"Publish"</span>,
+                            <span class="string">"ReadingTimePublishPlugin"</span>,
+                            <span class="string">"TwitterPublishPlugin"</span>,
+                            <span class="string">"SplashPublishPlugin"</span>,
+                            <span class="string">"ImageAttributesPublishPlugin"</span>,
+                            <span class="string">"LinkAttributesPublishPlugin"</span>,
+                            <span class="string">"GistPublishPlugin"</span>,
+                            <span class="string">"VerifyResourcesExistPublishPlugin"</span>,
+                            <span class="string">"YoutubePublishPlugin"</span>,
+                            <span class="string">"CNAMEPublishPlugin"</span>,
+                          ])
+    ]
+</code></pre><p>This is reflected in the most involved <code>.publish()</code> command we've seen so far:</p><pre><code><span class="keyword">try</span> <span class="type">YusufozgulCom</span>().<span class="call">publish</span>(withTheme: .<span class="dotAccess">yusufozgulcom</span>,
+                            indentation: <span class="keyword">nil</span>,
+                            at: <span class="keyword">nil</span>,
+                            rssFeedSections: [.<span class="dotAccess">blogs</span>, .<span class="dotAccess">projects</span>],
+                            rssFeedConfig: <span class="keyword">nil</span>,
+                            additionalSteps: [.<span class="call">installPlugin</span>(.<span class="call">readingTime</span>(wordsPerMinute: <span class="number">40</span>)),
+                                              .<span class="call">generateSiteMap</span>(),
+                                              .<span class="call">installPlugin</span>(.<span class="call">verifyResourcesExist</span>()),
+                                              .<span class="call">generateRSSFeed</span>(including: [.<span class="dotAccess">blogs</span>, .<span class="dotAccess">projects</span>]),
+                                              .<span class="call">removeAllItems</span>(in: .<span class="dotAccess">blogs</span>, matching: .<span class="keyword">init</span>(matcher: { item <span class="keyword">in</span>
+                                                item.<span class="property">metadata</span>.<span class="property">isDraft</span> ?? <span class="keyword">false</span>
+                                              })),
+                                              .<span class="call">installPlugin</span>(.<span class="call">generateCNAME</span>(with: [<span class="string">"yusufozgul.com"</span>, <span class="string">"www.yusufozgul.com"</span>]))
+                            ],
+                            plugins: [.<span class="call">twitter</span>(),
+                                      .<span class="call">youtube</span>(),
+                                      .<span class="call">gist</span>(renderer: <span class="type">ColorGistRenderer</span>()),
+                                      .<span class="call">linkAttributes</span>(),
+                                      .<span class="call">imageAttributes</span>(),
+                                      .<span class="call">splash</span>(withClassPrefix: <span class="string">""</span>),
+                                      <span class="comment">//.publishGallery()</span>
+                            ])
+</code></pre><p>.pct 88</p></div></div></div><div class="footer pure-u-1"><div class="pure-u-1">© 2022 Mozahler</div><div class="pure-u-1">Generated using <a href="https://github.com/johnsundell/publish">Publish</a></div><div class="pure-u-1"><a href="/feed.rss">RSS feed</a></div></div></div></body></html>

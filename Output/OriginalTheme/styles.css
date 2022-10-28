@@ -1,0 +1,582 @@
+/**
+ {"accent":"#BAA827","primary":"#EDD34D","background3":"253E0F","defaultMode":{"dark":{}},"background2":"1800A1","accent3":"#8F8D17","accent2":"#3C5636","background":"#1E1E1E","secondary":"#A57C5C","themeName":"Dunkel"}
+*/
+
+:root {
+    /* Light Colors (background) */
+    --fprimary: #088;
+    --fsecondary: #a86;
+    --faccent: #cb3;
+    --fbackground: #fff;
+    --fbackground2: #10a;
+/*    --lb3: #241;*/
+    
+    /* Dark Colors (foreground/text) */
+    --bprimary: #ed4;
+    --bsecondary: #a86;
+    --baccent: #ca2;
+    --bb1: #222;
+    --bb2: #10a;
+    
+    --background-color: var(--fbackground);
+    --primary-accent-color: var(--faccent);
+    --primary-text-color: var(--fprimary);
+    --secondary-text-color: var(--fsecondary);
+    --secondary-background-color: var(--fbackground2);
+    
+    /*  --background-color: var(--fb1);*/
+    /*  --primary-item-color: var(--fb2);*/
+    /*  --secondary-item-color: var(--faccent);*/
+    /*  --primary-text-color: var(--fprimary);*/
+    /*  --secondary-text-color: var(--fsecondary);*/
+}
+
+@media (prefers-color-scheme: dark) {
+    --background-color: var(--bb1);
+    --primary-item-color: var(--bb2);
+    --secondary-item-color: var(--baccent);
+    --primary-text-color: var(-bbprimary);
+    --secondary-text-color: var(--bsecondary);
+}
+
+/*/* added per staskus */*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.l-box {
+    padding: 0.4em;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-weight: 100;
+}
+
+.post-category {
+    margin: 0 0.1em;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 60%;
+    border-radius: 8px;
+}
+
+.post-images {
+    margin: 1em 0;
+}
+.post-image-meta {
+    margin-top: -3.5em;
+    margin-left: 1em;
+    color: #fff;
+    text-shadow: 0 1px 1px #333;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.post-description {
+    color: var(--secondary-text-color);
+/*    color: #444;*/
+    line-height: 1.8em;
+}
+
+.post-description a {
+    text-decoration: underline;
+}
+
+.post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+}
+
+.post-tags {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+#layout {
+    padding: 0.25em;
+}
+
+.header {
+    text-align: left;
+    top: auto;
+    margin: 1em 1em 0;
+}
+
+/* commented out background color works fine */
+.sidebar {
+    background: var(--secondary-background-color);
+/* //   background: #fff;*/
+/*    color: rgba(0, 0, 0, 0.8);*/
+    color: var(--secondary-text-color);
+}
+
+/* these belong to sidebar */
+.brand-title,
+.brand-tagline {
+    margin: 0;
+}
+
+/* This is the title/Mozahler */
+.brand-title {
+    text-transform: capitalize;
+    color: var(--primary-text-color);
+
+}
+/* this is the subheader underneath the avatar */
+.brand-tagline {
+    font-weight: 300;
+    color: var(--primary-text-color);
+/*    color: rgba(0, 0, 0, 0.8);*/
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-item {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.nav-item a {
+    background: transparent;
+    border: 2px solid rgb(176, 202, 219);
+/*    color: var(--primary-text-color);*/
+    color: #fff;
+    margin-top: 1em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 85%;
+}
+.nav-item a:hover,
+.nav-item a:focus {
+    border: 2px solid rgb(61, 146, 201);
+    text-decoration: none;
+}
+
+.content-subhead {
+    text-transform: uppercase;
+    color: #aaa;
+    border-bottom: 1px solid #eee;
+    padding: 0.4em 0;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+/*there are three `content {` listed*/
+.content {
+    padding: 0 1em 0;
+}
+
+.author__avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.pure-menu {
+    margin-left: 0em;
+}
+
+.social-media {
+    display: none;
+    color: var(--primary-text-color);
+
+}
+
+.social-icon {
+    font-size: 1.5em;
+    color: var(--secondary-text-color);
+
+}
+
+/* font awesome has icons */
+
+.fa,
+.fas,
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1; }
+
+.fa-envelope-open-text:before {
+  content: "\f658"; }
+
+.fa-github:before {
+  content: "\f09b"; }
+
+.fa-github-alt:before {
+  content: "\f113"; }
+
+.fa-github-square:before {
+  content: "\f092"; }
+
+.fa-map-marker:before {
+  content: "\f041"; }
+
+.fa-map-marker-alt:before {
+  content: "\f3c5"; }
+
+.fa-linkedin:before {
+  content: "\f08c"; }
+
+.fa-linkedin-in:before {
+  content: "\f0e1"; }
+
+.fa-stack-overflow:before {
+  content: "\f16c"; }
+
+.fa-twitter-square:before {
+  content: "\f081"; }
+
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url("../webfonts/fa-brands-400.eot");
+  src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg"); }
+
+.fab {
+  font-family: 'Font Awesome 5 Brands'; }
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url("../webfonts/fa-regular-400.eot");
+  src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg"); }
+
+.fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900; }
+
+/*.far {*/
+/*  font-family: 'Font Awesome 5 Free';*/
+/*  font-weight: 400; }*/
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url("../webfonts/fa-solid-900.eot");
+  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg"); }
+
+/* end of staskus */
+body {
+  background: var(--background-color);
+  color: var(--primary-text-color);
+  font-family: Helvetica, Arial;
+  text-align: center;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    text-align: left;
+}
+
+header {
+    background-color: var(--primary-background-color);
+}
+
+header .wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header .site-name {
+    font-size: 1.5em;
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 7px;
+  line-height: 1.5em;
+}
+
+nav li a.selected {
+  text-decoration: underline;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+h2 {
+  margin: 20px 0;
+/*  color: var(--secondary-text-color);*/
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+/*    color: rgba(0, 0, 0, 0.8);*/
+}
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/*a {*/
+/*  color: inherit;*/
+/*}*/
+
+.description {
+  margin-bottom: 40px;
+}
+
+.item-list > li {
+  display: block;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--background-color);
+  margin-bottom: 20px;
+}
+
+.item-list > li:last-child {
+  margin-bottom: 0;
+}
+
+.item-list h1 {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.item-list p {
+  /*    margin-bottom: 0;*/
+}
+
+.item-list img {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 150px;
+  max-height: 120px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 0px;
+}
+
+.tag-list {
+  margin-bottom: 15px;
+}
+
+.tag-list li,
+.tag {
+  display: inline-block;
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-text-color);
+  padding: 4px 6px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.tag-list a,
+.tag a {
+  text-decoration: none;
+}
+
+.item-page .tag-list {
+  display: inline-block;
+}
+
+/*there are three `content {` listed*/
+.content {
+  margin-bottom: 40px;
+}
+
+.content img, figure {
+  text-align: center;
+  font-style: italic;
+  text-decoration: none;
+  border-radius: 10px;
+  width: 400px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.content p, li {
+  line-height: 1.3em;
+}
+
+.post {
+    padding-bottom: 0.5em;
+}
+.post-title {
+    font-size: 2em;
+    color: var(--primary-text-color);
+/*    color: #222;*/
+    margin-bottom: 0.2em;
+}
+.post-avatar {
+    border-radius: 50px;
+    float: right;
+    margin-left: 1em;
+}
+
+.browse-all {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.all-tags li {
+  font-size: 1.4em;
+  margin-right: 10px;
+  padding: 6px 10px;
+}
+
+footer {
+  color: var(--secondary-accent-color);
+}
+
+@media(max-width: 600px) {
+  .wrapper {
+    padding: 40px 20px;
+  }
+}
+
+/* this is the staskus version of media */
+@media (min-width: 48em) {
+    /*there are three `content {` listed*/
+    .content {
+        padding: 2em 1em 0;
+        margin-left: 25%;
+    }
+
+    .header {
+        margin: 3em 3em 0;
+        text-align: left;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 2em;
+        bottom: 0;
+    }
+    
+    .social-media {
+        display: inline;
+    }
+    
+    .social-icon {
+        font-size: 1em;
+    }
+    
+    .author__avatar {
+        display: block;
+        width: auto;
+        height: auto;
+    }
+    
+    .author__avatar img {
+        padding: 5px;
+        border: 1px solid #bfbfbf;
+        width: 125px;
+        height: 125px;
+    }
+        
+    .top-header {
+        position: fixed;
+        top: 0em;
+/*        background: var(--primary-background-color);*/
+        background: #fff;
+    }
+}
+
+.center {
+  justify-content: center;
+}
+
+/* This is the colorizing and formatting code for syntax highlighting */
+pre {
+    margin-bottom: 1.5em;
+    background-color: rgba(34, 37, 41, 1);
+    padding: 16px 0;
+    border-radius: 8px;
+}
+
+pre code {
+    font-family: monospace;
+    display: block;
+    padding: 0 20px;
+    color:  rgba(215, 215, 215, 1);
+    line-height: 1.4em;
+    font-size: 0.95em;
+    overflow-x: auto;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+}
+
+pre code .keyword {
+    color: rgba(252, 95, 193, 1);
+}
+
+pre code .type {
+    color: rgba(158, 241, 221, 1);
+}
+
+pre code .call {
+    color: rgba(158, 241, 221, 1);
+}
+
+pre code .property {
+    color: #21ab9d;
+}
+
+pre code .number {
+    color: rgba(200, 184, 106, 1);
+}
+
+pre code .string {
+    color: rgba(250, 106, 102, 1);
+}
+
+pre code .comment {
+    color: #6b8a94;
+}
+
+pre code .dotAccess {
+    color: rgba(158, 241, 221, 1);
+}
+
+pre code .preprocessing {
+    color: #b68a00;
+}
