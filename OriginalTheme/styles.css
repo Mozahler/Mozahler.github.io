@@ -1,8 +1,10 @@
 /**
  {"accent":"#BAA827","primary":"#EDD34D","background3":"253E0F","defaultMode":{"dark":{}},"background2":"1800A1","accent3":"#8F8D17","accent2":"#3C5636","background":"#1E1E1E","secondary":"#A57C5C","themeName":"Dunkel"}
 */
+{: style="text-align: left" }
 
 :root {
+
     /* Light Colors (background) */
     --fprimary: #088;
     --fsecondary: #a86;
@@ -286,7 +288,7 @@ body {
   background: var(--background-color);
   color: var(--primary-text-color);
   font-family: Helvetica, Arial;
-  text-align: center;
+  text-align: left;
 }
 
 .wrapper {
