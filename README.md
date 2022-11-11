@@ -1,17 +1,8 @@
-#  Wednesday
+#  The Main Website Readme
 
-Wednesday 19 61
-Wednesday 21 63
-Wednesday 22 65
-Wednesday 21 81
+This repository drives my website. If you want to view it as intended then use this url
 
-https://github.com/crelies/AdvancedList
-https://stackoverflow.com/questions/64144815/how-to-add-a-favicon-to-a-website-built-with-the-publish-static-site-generator
+[Website](https://mozahler.github.io/about/)
 
-164, 99, 
-
-
-
-mozahler.github.io
-
+If you would like to see a feature added, show me how to do fix an issue you have found, or wish to make constructive criticism, please navigate to this site and click on the email link to drop me a line. Your contribution will be appreciated.
 
